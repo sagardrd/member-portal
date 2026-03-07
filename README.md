@@ -1,52 +1,183 @@
-# MemberPortal
+# Member Portal
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
+A **Member Search and Event Attendance Management Portal** built using
+**Angular, Spring Boot, and MySQL**.
 
-## Development server
+This application allows administrators to **search members, manage
+member data, and record attendance for events** conducted by the
+organization.
 
-To start a local development server, run:
+------------------------------------------------------------------------
 
-```bash
+# Tech Stack
+
+Frontend\
+- Angular 19\
+- TypeScript\
+- Bootstrap / CSS
+
+Backend\
+- Spring Boot 4.0.3\
+- Java 17\
+- REST APIs
+
+Database\
+- MySQL
+
+Tools\
+- Git\
+- GitHub\
+- Postman
+
+------------------------------------------------------------------------
+
+# Features
+
+### Member Management
+
+-   Search members by:
+    -   Membership Number
+    -   Name
+    -   Mobile Number
+-   View member details
+-   Store member photos
+
+### Event Management
+
+-   Create and manage yearly events
+-   Track event date and details
+
+### Attendance Tracking
+
+-   Mark attendance for members who attend events
+-   Store only **present members**
+-   Prevent duplicate attendance
+
+### Reports
+
+-   Generate attendance reports for each event
+-   View list of members present in events
+
+------------------------------------------------------------------------
+
+# Project Structure
+
+    member-portal
+    │
+    ├── src
+    │   ├── app
+    │   │   ├── components
+    │   │   ├── services
+    │   │   └── models
+    │   │
+    │   ├── assets
+    │   └── environments
+    │
+    ├── angular.json
+    ├── package.json
+    └── README.md
+
+------------------------------------------------------------------------
+
+# Development Server
+
+Run the following command to start the Angular development server:
+
+``` bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open your browser and navigate to:
 
-## Code scaffolding
+    http://localhost:4200
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+The application will automatically reload when you modify source files.
 
-```bash
-ng generate component component-name
-```
+------------------------------------------------------------------------
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+# Build Project
 
-```bash
-ng generate --help
-```
+To build the Angular project:
 
-## Building
-
-To build the project run:
-
-```bash
+``` bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Build output will be generated in:
 
-## Running unit tests
+    dist/
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+------------------------------------------------------------------------
 
-```bash
-ng test
+# Install Dependencies
+
+Before running the project, install required packages:
+
+``` bash
+npm install
 ```
 
-## Running end-to-end tests
+------------------------------------------------------------------------
 
-For end-to-end (e2e) testing, run:
+# Backend API
 
-```bash
-ng e2e
+The Angular application communicates with **Spring Boot REST APIs**.
+
+Example API endpoints:  /members
+
+@GET    /byMembershipNo/{membershipNo}
+@GET    /byName/{name}
+@GET    /byMobileNo/{mobileNo}
+@GET    /downloadPDF/{eventId}
+@GET    /events
+@POST   /attendance
+@POST   /bulk-photo-upload
+
+------------------------------------------------------------------------
+
+# Database Schema
+
+Main Tables:
+
+    membership_details
+    events
+    event_attendance
+
+### membership_details
+
+Stores member information.
+
+### events
+
+Stores event details.
+
+### event_attendance
+
+Stores attendance of members for events.
+
+------------------------------------------------------------------------
+
+# Future Improvements
+
+-   QR Code based attendance
+-   Member Add / Edit / Remove Option
+-   Event  Add / Edit / Remove Option
+-   Host this project online
+
+------------------------------------------------------------------------
+
+# Author
+
+**Sagar Darade**
+
+------------------------------------------------------------------------
+
+# License
+
+This project is for learning and internal organization use.
+
+------------------------------------------------------------------------
+
+# Application Screenshots
+
+![Member Portal](screenshots/Jaws-Portal-Screenshot.png)
