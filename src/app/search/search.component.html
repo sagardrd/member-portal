@@ -1,0 +1,59 @@
+<div class="container">
+  
+  <div class="search-row">
+    <span>I want to search member by</span>
+
+    <select [(ngModel)]="selectedSearchType" (change)="onSearchTypeChange()">
+      <option value="" disabled selected>Select Option</option>
+      <option value="mobileNo"> Mobile No.</option>
+      <option value="fullName"> Name</option>
+      <option value="membershipNo"> Membership ID</option>
+    </select>
+
+    <!-- keep space for input/button even when hidden to prevent layout shift -->
+    <input type="text" [(ngModel)]="searchQuery" [placeholder]="getPlaceholder()" (keydown.enter)="performSearch()"
+           [style.visibility]="selectedSearchType ? 'visible' : 'hidden'">
+    <button class="search-btn" (click)="performSearch()" [style.visibility]="selectedSearchType ? 'visible' : 'hidden'">Search</button>
+
+    <!-- event dropdown fetched from service -->
+    <select [(ngModel)]="selectedEvent" class="event-dropdown" (change)="onEventChange()">
+      <option [ngValue]="null" disabled>Select Event</option>
+      <option *ngFor="let ev of eventList" [ngValue]="ev">{{ ev.eventName }} - {{ ev.eventYear }}</option>
+    </select>
+    <!-- only show download button when an event is selected -->
+    <button *ngIf="selectedEvent" (click)="downloadEventPdf(this.selectedEvent)" class="btn btn-primary download-btn">📕Download PDF</button>
+  </div>
+
+  <hr>
+
+  <div *ngIf="hasSearched">
+    
+    <p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>
+
+    <div *ngFor="let member of searchResults" class="member-card">
+      <div class="photo">
+  <img [src]="member.photo ? 'data:image/jpeg;base64,' + member.photo : 'assets/dummy.jpeg'" 
+    alt="Member Photo"
+  >
+</div>
+      <div class="details">
+        <h3>{{ member.fullName }}</h3>
+        <p>ID: {{ member.membershipNo }}</p>
+        <p>Mobile: {{ member.mobileNo }}</p>
+        <p>Joining Date: {{ member.doj | date:'dd/MMM/yyyy' }}</p>
+        <button class="attendance-btn" 
+                *ngIf="selectedEvent"
+                [disabled]="member.attended" 
+                (click)="markAttendance(member)">
+          {{ member.attended ? 'Present' : 'Mark Attendance' }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <img src="assets/image.png" alt="Banner Image" width="30%" class="banner-image">
+  </div>
+
+  <p class="footer-text">Developed by Sagar S. Darade.</p>
+</div>

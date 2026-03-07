@@ -1,0 +1,21 @@
+.container { padding: 20px; font-family: Arial, sans-serif; }
+.search-row { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; }
+select, input, button { padding: 8px; border-radius: 4px; border: 1px solid #ccc; font-size: 14px; }
+select { background-color: #f9f9f9; cursor: pointer; }
+input { background-color: #fff; }
+.search-btn { background-color: #98FB98; color: #006400; border: 1px solid #32CD32; cursor: pointer; transition: background-color 0.3s; }
+.search-btn:hover { background-color: #7CFC00; }
+.reset-btn { background-color: #d9534f; color: white; border: none; cursor: pointer; transition: background-color 0.3s; }
+.reset-btn:hover { background-color: #c9302c; }
+.member-card { 
+  border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; 
+  display: flex; gap: 20px; align-items: center; 
+}
+.photo img { width: 120px; height: 120px; border-radius: 50%; border: 2px solid #ddd; }
+.reset-btn { background-color: #d9534f; color: white; border: none; cursor: pointer; }
+.attendance-btn { margin-top: 10px; padding: 6px 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+.attendance-btn[disabled] { background-color: #6c757d; cursor: default; }
+.event-dropdown { order: 2; margin-left: 500px; }
+.download-btn { order: 3; margin-left: 0; }
+.banner-image { display: block; margin: 0 auto; }
+.footer-text { text-align: center; margin-top: 20px; font-size: 14px; color: #666; }
