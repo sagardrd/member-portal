@@ -11,22 +11,22 @@ organization.
 
 # Tech Stack
 
-Frontend\
-- Angular 19\
-- TypeScript\
+Frontend
+- Angular 19
+- TypeScript
 - Bootstrap / CSS
 
 Backend\
-- Spring Boot 4.0.3\
-- Java 17\
+- Spring Boot 4.0.3
+- Java 17
 - REST APIs
 
-Database\
+Database
 - MySQL
 
-Tools\
-- Git\
-- GitHub\
+Tools
+- Git
+- GitHub
 - Postman
 
 ------------------------------------------------------------------------
@@ -125,13 +125,19 @@ The Angular application communicates with **Spring Boot REST APIs**.
 
 Example API endpoints:  /members
 
-@GET    /byMembershipNo/{membershipNo}
-@GET    /byName/{name}
-@GET    /byMobileNo/{mobileNo}
-@GET    /downloadPDF/{eventId}
-@GET    /events
-@POST   /attendance
-@POST   /bulk-photo-upload
+@GET    &nbsp;&nbsp;    /byMembershipNo/{membershipNo}
+
+@GET    &nbsp;&nbsp;    /byName/{name}
+
+@GET    &nbsp;&nbsp;    /byMobileNo/{mobileNo}
+
+@GET    &nbsp;&nbsp;    /downloadPDF/{eventId}
+
+@GET    &nbsp;&nbsp;    /events
+
+@POST   &nbsp;/attendance
+
+@POST   &nbsp;  /bulk-photo-upload
 
 ------------------------------------------------------------------------
 
@@ -180,4 +186,10 @@ This project is for learning and internal organization use.
 
 # Application Screenshots
 
+### Member Portal
+
 ![Member Portal](screenshots/Jaws-Portal-Screenshot.png)
+
+### Event Attendance Report
+
+![Report](screenshots/report-page.png)
